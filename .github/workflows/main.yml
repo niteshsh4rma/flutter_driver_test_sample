@@ -31,3 +31,9 @@ jobs:
         with:
           api-level: 29
           script: flutter drive --target=test_driver/main.dart --driver=test_driver/main_test.dart
+      
+      - name: Upload Screenshoots
+        uses: actions/upload-artifact@v3
+        with:
+          name: Test result screenshots
+          path: screenshots/*.png
