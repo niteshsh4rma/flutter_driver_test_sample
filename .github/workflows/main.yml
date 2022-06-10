@@ -13,15 +13,7 @@ jobs:
         with:
           flutter-version: '3.0.1'
           channel: 'stable'
-        
-      - name: Install dependencies
-        run: flutter pub get
+      
+      - name: Flutter Doctor
+        run: flutter doctor -v
 
-      - name: Run Unit Tests
-        run: flutter test
-
-      - name: Run Integration Tests
-        uses: reactivecircus/android-emulator-runner@v2
-        with:
-          api-level: 29
-          script: flutter drive --target=test_driver/main.dart --driver=test_driver/main_test.dart
