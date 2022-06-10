@@ -21,7 +21,7 @@ jobs:
         run: flutter test
 
       - name: Run Integration Tests
-        uses: reactivecircus/android-emulator-runner@v1
+        uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: 29
           script: flutter drive --target=test_driver/main.dart --driver=test_driver/main_test.dart
