@@ -22,4 +22,12 @@ jobs:
       
       - name: Flutter Doctor
         run: flutter doctor -v
+        
+      - name: Install dependencies
+        run: flutter pub get
 
+      - name: Run Integration Tests
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 29
+          script: flutter drive --target=test_driver/main.dart --driver=test_driver/main_test.dart
