@@ -20,7 +20,7 @@ jobs:
           flutter-version: '3.0.1'
           channel: 'stable'
       
-      - name: Flutter Doctor
+      - name: Flutter Doctor Log
         run: flutter doctor -v
         
       - name: Install dependencies
