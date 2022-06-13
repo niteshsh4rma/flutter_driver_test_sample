@@ -36,4 +36,4 @@ jobs:
         uses: peter-evans/create-or-update-comment@v2
         with:
           issue-number: ${{github.event.pull_request.number}}
-          body: ${{ echo $(./github/scripts/generate-markdown.sh) }}
+          body: echo $(./github/scripts/generate-markdown.sh)
