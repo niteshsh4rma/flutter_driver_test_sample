@@ -1,3 +1,2 @@
 for entry in $(ls ./screenshots/):
-    echo $entry
-    
+    echo "![$entry]( $(realpath $entry) )"

@@ -31,9 +31,13 @@ jobs:
         with:
           api-level: 29
           script: flutter drive --target=test_driver/main.dart --driver=test_driver/main_test.dart
-      
-      - name: Upload Screenshoots
-        uses: peter-evans/create-or-update-comment@v2
-        with:
-          issue-number: ${{github.event.pull_request.number}}
-          body: echo $(./github/scripts/generate-markdown.sh)
+
+      # - name: Upload Screenshoots
+      #   uses: peter-evans/create-or-update-comment@v2
+      #   with:
+      #     issue-number: ${{github.event.pull_request.number}}
+      #     body: echo $(./github/scripts/generate-markdown.sh)
+
+      - name: Upload Screenshots
+        run: echo $(./github/scripts/generate-markdown.sh)
+        
