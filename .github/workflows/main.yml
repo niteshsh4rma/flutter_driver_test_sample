@@ -1,6 +1,6 @@
 name: Flutter WorkFlow
 
-on: [push, workflow_dispatch]
+on: [pull_request]
 jobs:
   build:
     runs-on: macos-latest
@@ -33,7 +33,7 @@ jobs:
           script: flutter drive --target=test_driver/main.dart --driver=test_driver/main_test.dart
       
       - name: Upload Screenshoots
-        uses: actions/upload-artifact@v3
+        uses: peter-evans/create-or-update-comment@v2
         with:
-          name: Test result screenshots
-          path: screenshots/*.png
+          issue-number: ${{github.event.pull_request.number}}
+          body: 'Congratulations, Screenshots Uploaded'
