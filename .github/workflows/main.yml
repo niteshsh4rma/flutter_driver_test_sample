@@ -34,8 +34,8 @@ jobs:
       
       - name: Upload Screenshoots
         uses: peter-evans/create-or-update-comment@v2
+        env:
+          markdown: $(./github/scripts/generate-markdown.sh)
         with:
-          env: 
-            markdown: $(./github/scripts/generate-markdown.sh)
           issue-number: ${{github.event.pull_request.number}}
           body: ${{ env.mardown }}
